@@ -73,11 +73,8 @@ class Model extends \autoTable
             307 => '307 Temporary Redirect',
             308 => '308 Permanent Redirect',
         ];
-        if(isset($codes[$code])) {
-            return $codes[$code];
-        } else {
-            return $codes[301];
-        }
+        
+        return 'HTTP/1.1 ' . (isset($codes[$code]) ? $codes[$code] : $codes[301]);
     }
 
     /**
