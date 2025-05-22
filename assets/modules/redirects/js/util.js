@@ -40,7 +40,8 @@ const request = function (url, data, successCallback, errorCallback) {
         method: 'post',
         credentials: 'same-origin',
         headers: {
-            Accept: 'application/json'
+            Accept: 'application/json',
+            'X-Requested-With': 'XMLHttpRequest',
         },
         body: form_data
     }))
