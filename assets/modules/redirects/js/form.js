@@ -12,7 +12,7 @@ class GenericForm {
             text: 'Сохранить',
             iconCls: 'btn-green fa fa-check fa-lg',
             handler: () => {
-                $('form', '#' + this.wrapperId).get(0).dispatchEvent(new Event('submit'));
+                $('form', '#' + this.wrapperId).get(0).dispatchEvent(new Event('submit', {bubbles: true, cancelable: true}));
             }
         }, {
             text: 'Закрыть',
